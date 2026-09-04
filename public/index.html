@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeBridge NG – Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-gradient-to-br from-green-500 to-blue-600 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">HomeBridge NG</h1>
+    <p class="text-center text-gray-500 mb-6">Connecting Nigerian talents with landlords</p>
+
+    <!-- Tab switch -->
+    <div class="flex justify-center mb-6 space-x-4">
+      <button id="loginTab" class="px-4 py-2 font-semibold rounded-t border-b-2 border-green-500 text-green-600">Login</button>
+      <button id="registerTab" class="px-4 py-2 font-semibold rounded-t border-b-2 border-transparent text-gray-400">Register</button>
+    </div>
+
+    <!-- Login form -->
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input type="email" name="email" required class="w-full p-2 border rounded" placeholder="you@example.com" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+        <input type="password" name="password" required class="w-full p-2 border rounded" placeholder="••••••••" />
+      </div>
+      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Login</button>
+    </form>
+
+    <!-- Register form (hidden) -->
+    <form id="registerForm" class="space-y-4 hidden">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+        <input type="text" name="name" required class="w-full p-2 border rounded" placeholder="Ada Obi" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input type="email" name="email" required class="w-full p-2 border rounded" placeholder="you@example.com" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+        <input type="password" name="password" required class="w-full p-2 border rounded" placeholder="Min 6 characters" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">I am a</label>
+        <select name="role" required class="w-full p-2 border rounded">
+          <option value="TALENT">Talent (looking for home)</option>
+          <option value="LANDLORD">Landlord (listing property)</option>
+        </select>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Create Account</button>
+    </form>
+
+    <div id="error" class="text-red-500 text-center mt-4"></div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
